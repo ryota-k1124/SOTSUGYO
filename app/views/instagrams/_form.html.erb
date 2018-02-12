@@ -27,10 +27,10 @@
     <%= label_tag :test1, "甘い" %>
   </div>
   <div class="field">
-    <% %w(甘い 辛い しょっぱい すっぱい こってり あっさり).each.with_index do |ingredient,i| %>
+    <% %w(甘い 辛い しょっぱい すっぱい こってり あっさり).each.with_index do |taste,i| %>
     <label>
-      <%= check_box_tag 'samurai[ingredients][]', ingredient,false,id:"samurai_ingredients_#{i}"%>
-      <%= ingredient %>
+      <%= check_box_tag 'instagram[taste][]', taste,false,id:"instagram_taste_#{i}"%>
+      <%= taste %>
     </label>
     <% end %>
   </div>
