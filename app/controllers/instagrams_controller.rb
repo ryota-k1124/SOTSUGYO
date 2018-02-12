@@ -64,7 +64,7 @@ class InstagramsController < ApplicationController
 ## paramsメソッドにて取得した値の内、Instagramのtitleとcontentだけ取り込み
   private
    def instagrams_params
-      params.require(:instagram).permit(:content, :image, :id, :user_id)
+      params.require(:instagram).permit(:content, :image, :checkbox, taste:[], :id, :user_id)
    end
 
    # idをキーとして値を取得するメソッド
