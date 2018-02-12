@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10 col-xs-10">
+    <h2>お知らせ</h2>
+    <ul>
+      
+      <% @notifications.each do |notification| %>
+      <hr>
+      <li>
+        <p class="left"><span><%= notification.read ? '既読':'未読' %></span></p>
+        <p class="left">
+        <%= notification.comment.user.try(:name) %>さんが
+        あなたの投稿（<%= link_to "#{notification.comment.instagram.content}", instagram_path(notification.comment.instagram, notification_id: notification.id) %>）にコメントしました。</p>
+        <p class="left"><%= notification.created_at %></p>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

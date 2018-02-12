@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>ユーザー</h2>
+  
+    <strong>name:</strong>
+    <%= @user.name %>
+    <br>
+    <strong>email:</strong>
+    <%= @user.email %>
+    <br>
+    <%= profile_img(@user) if profile_img(@user) %>
+    
+    <br>
+    <br>
+    <strong>フォローユーザ</strong>
+    <% @user.followed_users.each do |followed| %>
+    <div>
+      <%= followed.email %>
+    </div>
+    <% end %>
+    <br>
+    <strong>フォロワーユーザ</strong>
+    <% @user.followers.each do |followers| %>
+    <div>
+      <%= followers.email %>
+    </div>
+    <% end %>
+</div>
