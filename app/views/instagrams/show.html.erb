@@ -14,6 +14,14 @@
   <strong>Image:</strong>
   <div class="instagram_img"><%= image_tag @Instagram.image %></div><br>
 </p>
+
+<p>
+  <strong>料理の味:</strong>
+  <% @taste.split(",").each_with_index do |f| %>
+    <%= f %>
+  <% end %>
+</p>
+
 <% if current_user.id == @Instagram.user.id %>
   <%= link_to 'Edit', edit_instagram_path(@Instagram), class: 'btn btn-primary btn-block' %>
 <% end %>

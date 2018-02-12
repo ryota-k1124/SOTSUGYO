@@ -32,12 +32,14 @@ class InstagramsController < ApplicationController
   end
 
   def edit
+    @taste = @Instagram.taste
     #@Instagram = Instagram.find(params[:id])
   end
   
   def show
     @comment = @Instagram.comments.build
     @comments = @Instagram.comments
+    @taste = @Instagram.taste
     Notification.find(params[:notification_id]).update(read: true) if params[:notification_id]
   end
   
