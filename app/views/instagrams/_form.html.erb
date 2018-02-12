@@ -10,7 +10,6 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
     <%= f.label :content %><br>
     <%= f.text_field :content %><br>
@@ -20,6 +19,14 @@
     <%= f.file_field :image %><br>
     <%##= f.hidden_field :image %><br>
   </div>
+  
+  <br>
+  <h1>この料理の味を指定してください！</h1>
+  <div class="field">
+    <%= check_box_tag :test1 %>
+    <%= label_tag :test1, "甘い" %>
+  </div>
+  
   <div class="actions">
     <%= f.submit'投稿', class: 'btn btn-primary btn-block' %><br>
   </div>
