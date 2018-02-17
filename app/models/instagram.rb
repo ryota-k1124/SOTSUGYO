@@ -5,13 +5,15 @@ class Instagram < ActiveRecord::Base
     mount_uploader :image, PictureUploader
     
     before_save do
-      #self.taste.gsub!(/[\[\]\"]/, "") if attribute_present?("taste")
-      self.taste if attribute_present?("taste")
+      self.taste.gsub!(/[\[\]\"]/, "") if attribute_present?("taste")
+      #self.taste if attribute_present?("taste")
     end
     
     def self.search(search) #self.でクラスメソッドとしている
-      if search # Controllerから渡されたパラメータが!= nilの場合は、titleカラムを部分一致検索
-        Instagram.where(['taste LIKE ?', "%#{search}%"])
+      if search # Controllerから渡されたパラメータが!= nilの場合は、カラムを部分一致検索
+        tmp="#{search}".gsub!(/[\[\]\"]/, "").gsub(/(, )/, "%")
+        p tmp
+        Instagram.where(['taste LIKE ?', "%#{tmp}%"])
       else
         Instagram.all #全て表示。
       end

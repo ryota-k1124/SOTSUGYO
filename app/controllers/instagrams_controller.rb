@@ -1,9 +1,9 @@
 class InstagramsController < ApplicationController
   before_action :set_Instagram, only:[:edit, :update, :destroy, :show]
   before_action :authenticate_user!
-  before_action :taste_params, only:[:index]
+  #before_action :taste_params, only:[:index]
   def index
-    @instagrams = Instagram.search(taste_params)
+    @instagrams = Instagram.search(instagrams_params[:taste])
 
     respond_to do |format|
       format.html
@@ -26,7 +26,7 @@ class InstagramsController < ApplicationController
     @Instagram.user_id = current_user.id
     if @Instagram.save
       # ビューヘルパーの「rake routesのprefix_path」でルーティングにリンク
-      redirect_to instagrams_path, notice: "画像を投稿しました"
+      redirect_to tops_path, notice: "画像を投稿しました"
       NoticeMailer.sendmail_instagram(@Instagram).deliver
     else
       render 'new' # newのViewへ(new.html.erb)
@@ -47,7 +47,7 @@ class InstagramsController < ApplicationController
   
   def update
     if @Instagram.update(instagrams_params)
-      redirect_to instagrams_path, notice: "ブログを編集しました"
+      redirect_to tops_path, notice: "ブログを編集しました"
     else
       render 'edit'
     end
@@ -56,7 +56,7 @@ class InstagramsController < ApplicationController
   def destroy
     #@Instagram = Instagram.find(params[:id])
     @Instagram.destroy
-    redirect_to instagrams_path, notice: "ブログを削除しました"
+    redirect_to tops_path, notice: "ブログを削除しました"
   end
 
   def confirm
@@ -68,11 +68,7 @@ class InstagramsController < ApplicationController
 ## paramsメソッドにて取得した値の内、Instagramのtitleとcontentだけ取り込み
   private
    def instagrams_params
-      params.require(:instagram).permit(:content, :image, :checkbox, :id, :user_id, taste:[])
-   end
-
-   def taste_params
-     params.permit(:instagram[:taste])
+      params.require(:instagram).permit(:content, :image, :checkbox, :id, :user_id, taste: [])
    end
 
    # idをキーとして値を取得するメソッド
