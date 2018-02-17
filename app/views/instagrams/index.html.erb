@@ -2,9 +2,6 @@
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10 col-xs-10">
 <p id="notice"><%= notice %></p>
 
-<h1>今日の夕飯考えよう！！のページ</h1>
-<p class="flash"><%= notice %><%= alert %></p>
-  <tbody>
     <% @instagrams.each do |instagram| %>
         
         <p>投稿者：<%= instagram.user.try(:name) || "名無し" %></p>
@@ -22,6 +19,6 @@
 
 <br>
 
-<%= link_to '投稿', new_instagram_path, class: 'btn btn-default btn-sm btn-success' %>
+<%#= link_to '投稿', new_instagram_path, class: 'btn btn-default btn-sm btn-success' %>
 </div>
 </div>

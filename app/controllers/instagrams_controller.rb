@@ -1,13 +1,15 @@
 class InstagramsController < ApplicationController
   before_action :set_Instagram, only:[:edit, :update, :destroy, :show]
   before_action :authenticate_user!
-  
+  before_action :taste_params, only:[:index]
   def index
-    @instagrams = Instagram.all
+    @instagrams = Instagram.search(taste_params)
+
     respond_to do |format|
       format.html
       format.js
     end
+    #@binding.pry
   end
 
   def new
@@ -67,6 +69,10 @@ class InstagramsController < ApplicationController
   private
    def instagrams_params
       params.require(:instagram).permit(:content, :image, :checkbox, :id, :user_id, taste:[])
+   end
+
+   def taste_params
+     params.permit(:instagram[:taste])
    end
 
    # idをキーとして値を取得するメソッド

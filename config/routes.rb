@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'searches' => 'searches#index'
+  resources :tops
   get 'relationships/create'
 
   get 'relationships/destroy'
@@ -17,7 +19,8 @@ Rails.application.routes.draw do
   #   omniauth_callbacks: "users/omniauth_callbacks"
   # }
 
-  root 'instagrams#index'
+  #root 'instagrams#index'
+  root 'tops#index'
   resources :instagrams do
     resources :comments
     post :confirm, on: :collection
