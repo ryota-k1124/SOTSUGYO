@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 20180217012911) do
     t.integer  "user_id"
     t.integer  "menu_id"
     t.text     "content"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "comments", ["menu_id"], name: "index_comments_on_menu_id", using: :btree

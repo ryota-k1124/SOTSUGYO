@@ -10,7 +10,9 @@
         <%= check_box_tag 'menu[taste][]', taste,false ,id:"menu_taste_#{i}"%>
         <%= taste %>
       </label>
+      <%= hidden_field_tag 'menu[def]', "default" %>
     <% end %>
   </div>
+
   <%= submit_tag '料理検索実行', class: 'btn btn-default btn-sm btn-success' %>
   <% end %>
