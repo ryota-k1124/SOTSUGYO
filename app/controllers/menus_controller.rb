@@ -47,7 +47,7 @@ class MenusController < ApplicationController
   
   def update
     if @Menu.update(menus_params)
-      redirect_to tops_path, notice: "ブログを編集しました"
+      redirect_to tops_path, notice: "投稿を編集しました"
     else
       render 'edit'
     end
@@ -56,7 +56,7 @@ class MenusController < ApplicationController
   def destroy
     #@Menu = Menu.find(params[:id])
     @Menu.destroy
-    redirect_to tops_path, notice: "ブログを削除しました"
+    redirect_to tops_path, notice: "投稿を削除しました"
   end
 
   def confirm
