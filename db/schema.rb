@@ -18,13 +18,13 @@ ActiveRecord::Schema.define(version: 20180217012911) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "instagram_id"
+    t.integer  "menu_id"
     t.text     "content"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
-  add_index "comments", ["instagram_id"], name: "index_comments_on_instagram_id", using: :btree
+  add_index "comments", ["menu_id"], name: "index_comments_on_menu_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "conversations", force: :cascade do |t|
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20180217012911) do
     t.datetime "updated_at",   null: false
   end
 
-  create_table "instagrams", force: :cascade do |t|
+  create_table "menus", force: :cascade do |t|
     t.string   "content"
     t.string   "image"
     t.datetime "created_at", null: false
@@ -118,7 +118,7 @@ ActiveRecord::Schema.define(version: 20180217012911) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
 
-  add_foreign_key "comments", "instagrams"
+  add_foreign_key "comments", "menus"
   add_foreign_key "comments", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"

@@ -1,6 +1,6 @@
-class CreateInstagrams < ActiveRecord::Migration
+class CreateMenus < ActiveRecord::Migration
   def change
-    create_table :instagrams do |t|
+    create_table :menus do |t|
       t.string :content
       t.string :image
       t.timestamps null: false

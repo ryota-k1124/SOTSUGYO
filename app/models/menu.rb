@@ -1,4 +1,4 @@
-class Instagram < ActiveRecord::Base
+class Menu < ActiveRecord::Base
     validates_presence_of :image, :content
     belongs_to :user
     has_many :comments, dependent: :destroy
@@ -13,9 +13,9 @@ class Instagram < ActiveRecord::Base
       if search # Controllerから渡されたパラメータが!= nilの場合は、カラムを部分一致検索
         tmp="#{search}".gsub!(/[\[\]\"]/, "").gsub(/(, )/, "%")
         p tmp
-        Instagram.where(['taste LIKE ?', "%#{tmp}%"])
+        Menu.where(['taste LIKE ?', "%#{tmp}%"])
       else
-        Instagram.all #全て表示。
+        Menu.all #全て表示。
       end
     end
 end

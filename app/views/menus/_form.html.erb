@@ -1,10 +1,10 @@
-<%= form_for(@Instagram) do |f| %>
-  <% if @Instagram.errors.any? %>
+<%= form_for(@Menu) do |f| %>
+  <% if @Menu.errors.any? %>
     <div id="error_explanation">
-      <h2><%= @Instagram.errors.count %> 件のエラーがあります:</h2>
+      <h2><%= @Menu.errors.count %> 件のエラーがあります:</h2>
 
       <ul>
-      <% @Instagram.errors.full_messages.each do |message| %>
+      <% @Menu.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -27,12 +27,12 @@
     
     <% if @taste.nil? %>
       <label>
-        <%= check_box_tag 'instagram[taste][]', taste,false ,id:"instagram_taste_#{i}"%>
+        <%= check_box_tag 'menu[taste][]', taste,false ,id:"menu_taste_#{i}"%>
         <%= taste %>
       </label>
     <% else %>
       <label>
-        <%= check_box_tag 'instagram[taste][]', taste,@taste.split(/\s*,\s*/).include?(taste),id:"instagram_taste_#{i}"%>
+        <%= check_box_tag 'menu[taste][]', taste,@taste.split(/\s*,\s*/).include?(taste),id:"menu_taste_#{i}"%>
         <%= taste %>
       </label>
     <% end %>

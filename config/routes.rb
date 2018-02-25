@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  #get 'instagrams' => 'instagrams#index'
-  resources :instagrams, only: [:index, :new, :create, :edit, :update, :destroy, :show]
+  #get 'menus' => 'menus#index'
+  resources :menus, only: [:index, :new, :create, :edit, :update, :destroy, :show]
   #mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   #devise_for :users
   # devise_for :users, controllers: {
@@ -19,9 +19,9 @@ Rails.application.routes.draw do
   #   omniauth_callbacks: "users/omniauth_callbacks"
   # }
 
-  #root 'instagrams#index'
+  #root 'menus#index'
   root 'tops#index'
-  resources :instagrams do
+  resources :menus do
     resources :comments
     post :confirm, on: :collection
   end

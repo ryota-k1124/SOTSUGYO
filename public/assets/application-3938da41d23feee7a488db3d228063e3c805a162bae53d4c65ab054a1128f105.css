@@ -1218,7 +1218,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 .fa-stack-overflow:before {
   content: "\f16c";
 }
-.fa-instagram:before {
+.fa-menu:before {
   content: "\f16d";
 }
 .fa-flickr:before {
@@ -2055,79 +2055,79 @@ ul {
 .left {
   text-align: left;
 }
-/* line 4, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+/* line 4, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
 .flash {
   color: white;
   padding-top: 10px;
 }
 
-/* line 8, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+/* line 8, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
 header {
   width: 100%;
   background-color: #4169e1;
   height: 54px;
 }
 
-/* line 14, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+/* line 14, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
 .navbar-default {
   border: 0;
 }
 
-/* line 17, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+/* line 17, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
 .navbar {
   background-color: transparent;
   color: white;
   margin-bottom: 0px;
 }
 
-/* line 23, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+/* line 23, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
 .navbar-default .navbar-brand {
   color: #ccc;
 }
-/* line 25, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+/* line 25, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
 .navbar-default .navbar-brand:hover {
   color: white;
 }
-/* line 29, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+/* line 29, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
 .navbar-default .navbar-nav > li > a {
   color: #ccc;
 }
-/* line 31, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+/* line 31, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   color: white;
 }
-/* line 35, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+/* line 35, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
 .navbar-default .navbar-nav > .open > a {
   background-color: transparent;
   color: white;
 }
-/* line 38, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+/* line 38, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
 .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
   background-color: transparent;
   color: white;
 }
 
 @media (max-width: 767px) {
-  /* line 45, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+  /* line 45, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #ccc;
     text-align: center;
   }
-  /* line 48, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+  /* line 48, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
     color: white;
   }
 
-  /* line 52, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+  /* line 52, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
   .navbar-default .navbar-toggle {
     background-color: transparent;
   }
-  /* line 54, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+  /* line 54, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
   .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
     background-color: transparent;
   }
 }
-/* line 60, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+/* line 60, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
 .main-header {
   padding-bottom: 15%;
   width: 100%;
@@ -2136,7 +2136,7 @@ header {
   background-attachment: fixed;
 }
 
-/* line 68, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+/* line 68, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
 .main-header img {
   display: block;
   margin: 0 auto;
@@ -2144,21 +2144,21 @@ header {
   padding-top: 15%;
 }
 
-/* line 75, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+/* line 75, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
 .about {
   background-color: white;
   color: #333;
   padding: 80px;
 }
 
-/* line 81, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+/* line 81, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
 .function {
   background-color: #e9e9e9;
   padding: 80px;
   padding-bottom: 185px;
 }
 
-/* line 87, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+/* line 87, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
 .contents {
   padding-top: 10px;
   margin-top: 10px;
@@ -2167,7 +2167,7 @@ header {
   margin-bottom: 100px;
 }
 
-/* line 96, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+/* line 96, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
 footer {
   width: 100%;
   background-color: #4169e1;
@@ -2180,18 +2180,18 @@ footer {
   bottom: 0;
 }
 
-/* line 108, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+/* line 108, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
 html {
   position: relative;
   min-height: 100%;
 }
 
-/* line 113, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+/* line 113, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
 body {
   text-align: center;
 }
 
-/* line 117, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+/* line 117, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
 .page-top-btn {
   display: none;
   border-radius: 20px;
@@ -2205,11 +2205,11 @@ body {
   bottom: 30px;
   z-index: 20;
 }
-/* line 129, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+/* line 129, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
 .page-top-btn:hover {
   opacity: 0.5;
 }
-/* line 132, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/instagrams.scss */
+/* line 132, /home/ubuntu/workspace/DAI3/app/assets/stylesheets/menus.scss */
 .page-top-btn a {
   display: block;
   color: white;

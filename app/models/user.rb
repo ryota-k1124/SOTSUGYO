@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
   mount_uploader :avatar, AvatarUploader #deviseの設定配下に追記
   
-  has_many :instagrams, dependent: :destroy
+  has_many :menus, dependent: :destroy
   has_many :comments, dependent: :destroy
   
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy

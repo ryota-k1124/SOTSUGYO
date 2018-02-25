@@ -1,22 +1,22 @@
 class CommentsController < ApplicationController
   def create
-    # instagramをパラメータの値から探し出し,instagramに紐づくcommentsとしてbuildします。
+    # menuをパラメータの値から探し出し,menuに紐づくcommentsとしてbuildします。
     @comment = current_user.comments.build(comment_params)
-    @instagram = @comment.instagram
-    @notification = @comment.notifications.build(user_id: @instagram.user.id )
+    @menu = @comment.menu
+    @notification = @comment.notifications.build(user_id: @menu.user.id )
     # クライアント要求に応じてフォーマットを変更
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to instagram_path(@instagram), notice: 'コメントを投稿しました。' }
+        format.html { redirect_to menu_path(@menu), notice: 'コメントを投稿しました。' }
         # JS形式でレスポンスを返します。
         format.js { render :index }
         
-        unless @comment.instagram.user_id == current_user.id
-          Pusher.trigger("user_#{@comment.instagram.user_id}_channel", 'comment_created', {
+        unless @comment.menu.user_id == current_user.id
+          Pusher.trigger("user_#{@comment.menu.user_id}_channel", 'comment_created', {
             message: 'あなたの投稿した画像にコメントが付きました'
           })
-          Pusher.trigger("user_#{@comment.instagram.user_id}_channel", 'notification_created', {
-            unread_counts: Notification.where(user_id: @comment.instagram.user.id, read: false).count
+          Pusher.trigger("user_#{@comment.menu.user_id}_channel", 'notification_created', {
+            unread_counts: Notification.where(user_id: @comment.menu.user.id, read: false).count
           })
         end
       else
@@ -31,11 +31,11 @@ class CommentsController < ApplicationController
 
   def update
     @comment = Comment.find(params[:id])
-    @instagram = @comment.instagram
+    @menu = @comment.menu
     
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to instagram_path(@instagram), notice:"コメントが編集されました!" }
+        format.html { redirect_to menu_path(@menu), notice:"コメントが編集されました!" }
         format.js { render :index }
       else
         render 'edit'
@@ -45,10 +45,10 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = current_user.comments.find(params[:id])
-    @instagram = @comment.instagram
+    @menu = @comment.menu
     respond_to do |format|
       @comment.destroy
-      format.html { redirect_to instagram_path(@instagram), notice: 'コメントを削除しました。' }
+      format.html { redirect_to menu_path(@menu), notice: 'コメントを削除しました。' }
       format.js { render :index }
     end
   end
@@ -56,6 +56,6 @@ class CommentsController < ApplicationController
   private
     # ストロングパラメーター
     def comment_params
-      params.require(:comment).permit(:instagram_id, :content)
+      params.require(:comment).permit(:menu_id, :content)
     end
 end

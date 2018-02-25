@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10 col-xs-10">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @Menu.content %>
+</p>
+<p class="right">
+  <strong>作成時間:</strong>
+  <%= @Menu.created_at.strftime("%y/%m/%d %p %l:%M") %>
+</p>
+<p>
+  <strong>Image:</strong>
+  <div class="menu_img"><%= image_tag @Menu.image %></div><br>
+</p>
+
+<p>
+  <strong>料理の味:</strong>
+  <% @taste.split(",").each_with_index do |f| %>
+    <%= f %>
+  <% end %>
+</p>
+
+<% if current_user.id == @Menu.user.id %>
+  <%= link_to 'Edit', edit_menu_path(@Menu), class: 'btn btn-primary btn-block' %>
+<% end %>
+    <p>コメント一覧</p>
+    <div id="comments_area">
+      <%= render partial: 'comments/index', locals: { comments: @comments, menu: @Menu } %>
+    </div>
+    <%= render partial: 'comments/form', locals: { comment: @comment, menu: @Menu } %>
+    <% if current_user.id == @Menu.user_id %>
+      <%= link_to '編集', edit_menu_path(@Menu) %> |
+    <% end %>
+<%= link_to 'Back', tops_path, class: 'btn btn-primary btn-block' %>
+
+</div>
+</div>

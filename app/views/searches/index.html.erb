@@ -3,11 +3,11 @@
   <tbody>
   <h1>この料理の味を指定してください！</h1>
   
-  <%= form_tag instagrams_path, :method => 'get' do %>
+  <%= form_tag menus_path, :method => 'get' do %>
   <div class="field">
     <% %w(甘い 辛い しょっぱい すっぱい こってり あっさり).each.with_index do |taste,i| %>
       <label>
-        <%= check_box_tag 'instagram[taste][]', taste,false ,id:"instagram_taste_#{i}"%>
+        <%= check_box_tag 'menu[taste][]', taste,false ,id:"menu_taste_#{i}"%>
         <%= taste %>
       </label>
     <% end %>

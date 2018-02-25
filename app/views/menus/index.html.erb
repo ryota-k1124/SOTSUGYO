@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10 col-xs-10">
+<p id="notice"><%= notice %></p>
+
+    <% @menus.each do |menu| %>
+        
+        <p>投稿者：<%= menu.user.try(:name) || "名無し" %></p>
+        <p>本文：<%= menu.content %><p><br>
+        <div class="menu_img"><%= image_tag menu.image %></div><br>
+        
+        <%= link_to 'Show', menu_path(menu), class: 'btn btn-default btn-sm btn-success' %>
+        
+        <% if current_user.id == menu.user.id %>
+          <%= link_to 'Edit', edit_menu_path(menu), class: 'btn btn-default btn-sm btn-success' %>
+          <%= link_to 'Destroy', menu_path(menu), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default btn-sm btn-success' %>
+        <% end %>
+    <br><br>
+    <% end %>
+
+<br>
+
+<%#= link_to '投稿', new_menu_path, class: 'btn btn-default btn-sm btn-success' %>
+</div>
+</div>

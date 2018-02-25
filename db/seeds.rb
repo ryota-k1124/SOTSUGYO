@@ -28,7 +28,7 @@ while n <= 10
                uid: uid
                )
 
-  Instagram.create(
+  Menu.create(
     content: "hoge",
     image: File.open("./app/assets/images/rails.png"),
     user_id: uid
